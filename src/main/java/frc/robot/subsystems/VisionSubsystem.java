@@ -6,15 +6,16 @@ import org.photonvision.targeting.PhotonTrackedTarget;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.VictorSPX;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class VisionSubsystem extends SubsystemBase {
-  public final VictorSPX m_motor = new VictorSPX(7);
+  public  Servo mServo = new Servo(0);
   private final VictorSPX m_led = new VictorSPX(8);
   public static PhotonCamera camera = new PhotonCamera("Camera");
   public int currentPipeline = 0;
-  public double yawOffset = 4d;
+  public double yawOffset = 3.5d;
   public boolean ForceLed = false;
 
   public VisionSubsystem() {
